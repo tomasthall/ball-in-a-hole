@@ -20,14 +20,29 @@ body {
     box-shadow: 0px 0px 42px -4px rgba(255,0,255,1);
 }
 
+.ball__obstacle {
+    background: black;
+    border: 1px solid magenta;
+    -webkit-box-shadow: 0px 0px 42px -4px rgba(255,0,255,1);
+    -moz-box-shadow: 0px 0px 42px -4px rgba(255,0,255,1);
+    box-shadow: 0px 0px 42px -4px rgba(255,0,255,1);
+}
+
+.ball__goal {
+    background: magenta;
+    border: 1px solid magenta;
+    -webkit-box-shadow: 0px 0px 42px -4px rgba(0,255,255,1);
+    -moz-box-shadow: 0px 0px 42px -4px rgba(0,255,255,1);
+    box-shadow: 0px 0px 42px -4px rgba(0,255,255,1);
+}
+
 #board {
     width: 100vw;
     height: 100vh;
     background: darkslategrey;
 }
 
-.leaderboard {
-    display: none;
+.screen {
     position: absolute;
     z-index: 1000;
     width: 40vw;
@@ -37,19 +52,46 @@ body {
     margin-left: -20vw;
     background: darkmagenta;
     color: magenta;
-    border-bottom: 2px solid cyan;
-    border-right: 2px solid cyan;
+    border: 2px solid cyan;
     -webkit-box-shadow: 10px 10px 20px -12px rgba(0,255,255,1);
     -moz-box-shadow: 10px 10px 20px -12px rgba(0,255,255,1);
     box-shadow: 10px 10px 20px -12px rgba(0,255,255,1);
+    transition: all 0.5s;
 }
 
-.leaderboard__header {
+.start-screen {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.screen__header {
     font-size: 40px;
     text-align: center;
     text-shadow: 2px 3px 20px cyan;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.screen__button-container {
+    width: 100%;
+    padding: 0 20%;
+}
+
+.screen__button {
+    width: 100%;
+    padding: 10%;
+    background: magenta;
+    color: cyan;
+    border: 2px solid darkmagenta;
+    font-family: 'Yesteryear', cursive;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.screen__footer {
+    font-size: 22px;
 }
 
 .leaderboard__list {
@@ -62,4 +104,14 @@ body {
     text-align: right;
     padding-right: 10px;
     cursor: pointer;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
 }

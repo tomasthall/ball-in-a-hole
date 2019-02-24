@@ -9,12 +9,22 @@
   <body>
     <div id="board">
     </div>
-
-    <div class="leaderboard">
-        <div class="leaderboard__close">x</div>
-        <h2 class="leaderboard__header">Leaderboard</h2>
+    <div class="start-screen screen">
+      <h2 class="screen__header">Ball in a hole '87</h2>
+      <div class="screen__button-container">
+        <button class="screen__button" onclick="startGame()">Start a new game</button>
+        <button class="screen__button" onclick="showLeaderBoards()">Leaderboards</button>
+      </div>
+      <div class="screen__footer">
+        done by tomasthall
+      </div>
+    </div>
+    <div class="overlay">
+    </div>
+    <div class="leaderboard screen">
+        <div class="leaderboard__close" onclick="closeLeaderBoards()">x</div>
+        <h2 class="screen__header">Leaderboard</h2>
         <div class="leaderboard__list">
-
         </div>
     </div>
     <script src="app.js"></script>
