@@ -16,7 +16,7 @@ let ballObject = {
     speedY: 0
 };
 
-function changeBallPosition(e, ballObject) {
+function changeBallPosition(e) {
     ballObject.speedX = e.gamma / 30;
     ballObject.speedY = e.beta / 30;
 }
@@ -25,10 +25,10 @@ let holes = [];
 
 let score = 0;
 let highScores = [];
-let hasWon;g
+let hasWon;
 let gameRun = false;
 
-window.addEventListener('deviceorientation', changeBallPosition(ballObject));
+window.addEventListener('deviceorientation', changeBallPosition);
 
 function moveBall() {
     if(ballObject.x + ballObject.speedX < windowWidth && ballObject.x + ballObject.speedX > 0) {
@@ -141,6 +141,7 @@ function endGame(score, hasWon) {
 }
 
 function clearBoard() {
+    window.location.reload();
     for(let i = 0; i < document.getElementsByClassName('ball').length; i++) {
         board.removeChild(document.getElementsByClassName('ball')[i]);
     }
